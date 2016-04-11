@@ -1,0 +1,80 @@
+<!-- BEGIN VALIDATION STATES-->
+<div class="portlet light">
+  <div class="portlet-title">
+    <div class="caption">
+      <i class="fa fa-cogs font-green-sharp"></i>
+      <span class="caption-subject font-green-sharp bold uppercase">表单</span>
+    </div>
+  </div>
+  <div class="portlet-body form">
+    <!-- BEGIN FORM-->
+    <%= form_for([:admin, @user], :html => {:class => 'form-horizontal clearfix user-form-validate', :role => 'form'}) do |f| %>
+    <div class="form-body">
+    <div class="form-group">
+      <%= f.label(:username, '用户名', :class => "col-md-2 control-label") %>
+      <div class="col-md-4">
+        <%= f.text_field(:username, :placeholder => '用户名', :class => 'form-control') %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label(:email, '邮箱', :class => "col-md-2 control-label") %>
+      <div class="col-md-4">
+        <%= f.text_field(:email, :placeholder => '邮箱', :class => 'form-control') %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label(:genre, '用户类型', :class => "col-md-2 control-label") %>
+      <div class="col-md-4">
+        <%= f.select(:genre, [['普通用户', 3], ['管理员', 2], ['超级管理员', 1]], {}, :class => 'form-control') %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label(:password, '密码', class: 'col-md-2 control-label') %>
+      <div class="col-md-4">
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label(:password_confirmation, '确认密码', class: 'col-md-2 control-label') %>
+      <div class="col-md-4">
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label(:face, '头像', :class => "col-md-2 control-label") %>
+      <div class="col-md-4">
+        <div class="fileinput fileinput-new" data-provides="fileinput">
+          <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+            <img src="<%= @user.face.url(:small) %>" alt=""/>
+          </div>
+          <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+          </div>
+          <div>
+            <span class="btn default btn-file">
+              <span class="fileinput-new">选择图片(80x80)</span>
+              <span class="fileinput-exists">修改</span>
+              <%= f.file_field(:face, :accept => "image/*") %>
+            </span>
+            <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">移除</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-9">
+                <%= link_to '返回', admin_users_path, :class => 'btn btn-default' %>
+                <% if action_name == 'new' %>
+                <button type="submit" class="btn green">保存</button>
+                <% else %>
+                <button type="submit" class="btn green">更新</button>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    <!-- END FORM-->
+  </div>
+</div>
+<!-- END VALIDATION STATES-->
