@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to =>'admin/users#index'
+  root :to =>'admin/sum_messages#index'
   get "/admin" => "admin/users#index"
 
   devise_for :users, :controllers => { :sessions => "sessions",:registrations => "registrations",:passwords => "passwords",:confirmations => "confirmations" }

@@ -80,7 +80,7 @@ $(function() {
             "data": "id",
             "orderable": false,
             "render": function(data, type, full) {
-                return '<a href="/admin/sum_messages/' + data + '/edit" class="btn default btn-xs purple"><i class="fa fa-edit"></i> 编辑</a><a href="/admin/sum_messages/' + data + '" class="btn default btn-xs black" data-method="delete" data-confirm="确定删除此条记录吗？"><i class="fa fa-trash-o"></i> 删除</a>';
+                return '<a href="/admin/sum_messages/' + data + '" class="btn default btn-xs blue"><i class="fa fa-sptify"></i> 查看</a><a href="/admin/sum_messages/' + data + '" class="btn default btn-xs black" data-method="delete" data-confirm="确定删除此条记录吗？"><i class="fa fa-trash-o"></i> 删除</a>';
             }
         }],
     });

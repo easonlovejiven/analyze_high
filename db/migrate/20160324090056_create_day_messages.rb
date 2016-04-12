@@ -10,12 +10,12 @@ class CreateDayMessages < ActiveRecord::Migration
       t.integer :wechat_share_count, default: 0
       t.integer :weibo_share_count, default: 0
       t.integer :genre
-      t.string :day_mark
+      t.datetime :operation_time
 
       t.timestamps null: false
     end
 
     add_index :day_messages, :post_id
-    add_index :day_messages, :day_mark
+    add_index :day_messages, :operation_time
   end
 end
