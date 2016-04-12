@@ -14,20 +14,11 @@
       <div class="form-group fileupload">
         <%= f.label(:file, "文件", :class => "col-md-3 control-label") %>
         <div class="col-md-4">
-          <div class="fileinput small fileinput-new" data-provides="fileinput">
-            <div class="fileinput-new thumbnail">
-              <%= @document.file %>
-            </div>
-            <div class="fileinput-preview fileinput-exists thumbnail"></div>
-            <div>
-              <span class="btn btn-default btn-file">
-                <span class="fileinput-new">选择</span>
-                <span class="fileinput-exists">替换</span>
-                <%= f.file_field(:file) %>
-              </span>
-              <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">移除</a>
-            </div>
-          </div>
+          <% 
+            file_name = @document.file.to_s 
+            file_name = file_name.include?('missing') ? '' : file_name.split('?')[0]
+          %>
+          <%= f.file_field(:file, :class => "dropify", :"data-default-file" => "#{file_name}" ) %>
         </div>
       </div>
 

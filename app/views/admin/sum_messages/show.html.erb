@@ -12,15 +12,33 @@
                     <div class="portlet-title">
                         <div class="caption">
                           <i class="fa fa-cogs font-green-sharp"></i>
-                          <span class="caption-subject font-green-sharp bold uppercase">详情</span>
+                          <span class="caption-subject font-green-sharp bold uppercase"></span>
                         </div>
                     </div>
 
                     <div class="portlet-body">
-                        <div class="form-body">
-                          <div class="form-group">
-                              <p>统计结果</p>
-                          </div>
+                        <div class="portlet light">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                  <i class="fa fa-cogs font-green-sharp"></i>
+                                  <span class="caption-subject font-green-sharp bold uppercase"></span>
+                                </div>
+                            </div>
+
+                            <div class="portlet-body">
+                                <div class="com-line-chart" data-origin-data='{
+                                    "title": "分享统计",
+                                    "xAxis": "周一,周二,周三,周四,周五,周六,周日",
+                                    "series": [{
+                                        "name": "微博分享量",
+                                        "data": "1,-2,2,5,3,2,0"
+                                    },{
+                                        "name": "微信分享量",
+                                        "data": "1,-2,20,125,3,2,30"
+                                    }]}'>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- End: life time stats -->
@@ -29,4 +47,4 @@
         <!-- END PAGE CONTENT INNER -->
     </div>
 </div>
-<!-- END PAGE CONTENT -->
+<!-- END PAGE CONTENT

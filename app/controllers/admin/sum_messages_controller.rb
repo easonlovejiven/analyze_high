@@ -35,6 +35,8 @@ class Admin::SumMessagesController < Admin::BaseController
       @end_time = params[:end_time] || time
       @messages = DayMessage.where(["post_id = ? and operation_time >= ? and operation_time <= ?", @sum_message.post_id, @start_time, @end_time]).order("operation_time ASC")
     end
+
+    p @messages
   end
 
 

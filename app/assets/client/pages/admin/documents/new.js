@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap/js/bootstrap.min
 //= require bootstrap-fileinput/bootstrap-fileinput
+//= require dropify/js/dropify.min
 //= require jquery-validation/js/jquery.validate.min.js
 //= require jquery-validation/js/additional-methods.min.js
 //= require jquery-validation/js/localization/messages_zh
@@ -21,11 +22,14 @@ $(function() {
     var el = $('body'),
         elForm = el.find('form.user-form-validate');
 
+
+
     Metronic.init(); // init metronic core componets
     Layout.init(); // init layout
     Demo.init(); // init demo features
     ComponentsPickers.init(); // init date-picker
 
+    el.find('.dropify').dropify();
 
     elForm.validate({
         errorElement: 'span', //default input error message container
